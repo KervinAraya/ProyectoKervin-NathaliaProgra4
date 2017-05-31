@@ -1,12 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%
-   HttpSession sesion  = request.getSession(true);
-   if(sesion.getAttribute("user")!=null){
-       request.getRequestDispatcher("inicio.jsp").forward(request, response);
-   }
-    
- %>
 <html>
 <head>
 	<meta charset="UTF-8">

@@ -36,38 +36,20 @@ public class FiltrerSession implements Filter {
     private void doBeforeProcessing(ServletRequest re, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
+            
+        }
+
+    }    
+    
+    private void doAfterProcessing(ServletRequest re, ServletResponse response)
+            throws IOException, ServletException {
+        if (debug) {
             HttpServletRequest request = (HttpServletRequest) re;
             if(request.getSession().getAttribute("user")==null){
                 request.getRequestDispatcher("index.jsp").forward(re, response);
             }
             log("FiltrerSession:DoBeforeProcessing");
         }
-
-    }    
-    
-    private void doAfterProcessing(ServletRequest request, ServletResponse response)
-            throws IOException, ServletException {
-        if (debug) {
-            log("FiltrerSession:DoAfterProcessing");
-        }
-
-        // Write code here to process the request and/or response after
-        // the rest of the filter chain is invoked.
-        // For example, a logging filter might log the attributes on the
-        // request object after the request has been processed. 
-        /*
-	for (Enumeration en = request.getAttributeNames(); en.hasMoreElements(); ) {
-	    String name = (String)en.nextElement();
-	    Object value = request.getAttribute(name);
-	    log("attribute: " + name + "=" + value.toString());
-
-	}
-         */
-        // For example, a filter might append something to the response.
-        /*
-	PrintWriter respOut = new PrintWriter(response.getWriter());
-	respOut.println("<P><B>This has been appended by an intrusive filter.</B>");
-         */
     }
 
     /**

@@ -5,17 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-   <%
-   HttpSession sesion  = request.getSession(true);
-   if(sesion.getAttribute("user") == null){
-       request.getRequestDispatcher("index.jsp").forward(request, response);
-   }
-    
- %>
- <head>
-	<title>Inicio</title>
+
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="js/inicio/script.js"></script>
@@ -44,18 +34,6 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="inicio.jsp" class="">Inicio</a></li>
-                            <% if(sesion.getAttribute("privilege").equals("Admin")){
-                                out.println("<li class=' dropdown'>");
-                                out.println("<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Socios <span class='caret'></span></a>");
-                                out.println("<ul class='dropdown-menu'>");  
-                                        out.println("<li><a href='asociados/seleccionver.html'>Ver socios</a></li>");
-                                        out.println("<li><a href='asociados/registro.html'>Añadir socio</a></li>");
-                                        out.println("<li><a href='asociados/eliminar.html'>Eliminar socio</a></li>");
-                                        out.println("<li><a href='asociados/modificar.html'>Modificar socio</a></li>");
-                                 out.println("</ul>");           
-                            out.println("</li>");
-                            }
-                               %>
                             <li class="dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empleados <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="empleados/seleccionver.html">Ver empleados</a></li>
@@ -113,5 +91,4 @@
         </div>
     </div>
   </header>
-    </body>
-</html>
+
