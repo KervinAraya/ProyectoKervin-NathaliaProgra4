@@ -33,7 +33,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="inicio.jsp" class="">Inicio</a></li>
+                            <li class="<%if(request.getAttribute("active").equals("inicio"))out.println("active"); %>"><a href="inicio.jsp" class="">Inicio</a></li>
                             <li class="dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empleados <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="empleados/seleccionver.html">Ver empleados</a></li>
@@ -42,7 +42,7 @@
                                         <li><a href="empleados/modificar.html">Modificar empleado</a></li>
                                     </ul>
                                 </li>
-                            <li class=" dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
+                            <li class=" <%if(request.getAttribute("active").equals("productos"))out.println("active"); %>"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="productos/seleccionar.html">Ver productos</a></li>
                                     <li><a href="productos/registro.html">Registrar productos</a></li>
@@ -52,14 +52,14 @@
                                         
                                 </ul>
                             </li>
-                            <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ventas <span class="caret"></span></a>
+                            <li class=" <%if(request.getAttribute("active").equals("ventas"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ventas <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                         <li><a href="ventas/seleccionar.html">Ver ventas</a></li>
                                         <li><a href="ventas/añadir.html">Añadir venta</a></li>
                                         <li><a href="ventas/reembolso.html">Reembolso</a></li>
                                 </ul>
                             </li>
-                            <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materia prima <span class="caret"></span></a>
+                            <li class=" <%if(request.getAttribute("active").equals("productos"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materia prima <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="materiaprima/seleccionar.html">Ver productos lacteos</a></li>
                                     <li><a href="materiaprima/registro.html">Registrar producto lacteo</a></li>
@@ -67,7 +67,7 @@
 
                                 </ul>
                             </li>
-                                <li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pagos <span class="caret"></span></a>
+                                <li class=" <%if(request.getAttribute("active").equals("pago"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pagos <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="pagos/pago.html">Realizar pago de producto lacteo</a></li>
                                         

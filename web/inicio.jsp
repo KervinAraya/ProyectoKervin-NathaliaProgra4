@@ -8,6 +8,7 @@
 
 <%
    HttpSession sesion  = request.getSession(true);
+   request.setAttribute("active", "inicio");
  %>
 <!DOCTYPE html>
 <html>
