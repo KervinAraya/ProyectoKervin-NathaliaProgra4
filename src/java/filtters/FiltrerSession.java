@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author kervin
  */
-@WebFilter(filterName = "FiltrerSession", urlPatterns = {"/*"})
+@WebFilter(filterName = "FiltrerSession", urlPatterns = {"/inicio.jsp"})
 public class FiltrerSession implements Filter {
     
     private static final boolean debug = true;

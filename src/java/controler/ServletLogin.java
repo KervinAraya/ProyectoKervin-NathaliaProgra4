@@ -1,8 +1,13 @@
 
 package controler;
 
+import conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,18 +32,16 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-        if(request.getParameter("password").equals("1234") && request.getParameter("user").equals("pulga")){
-            request.getSession().setAttribute("user",  request.getParameter("user"));
-            request.getSession().setAttribute("privilege", "Admin");
-            request.getSession(true);
-            request.getSession().setMaxInactiveInterval(300);
-            request.getRequestDispatcher("inicio.jsp").forward(request, response);
-        }else{
-             request.getRequestDispatcher("ErrorLogin").forward(request, response);
-        }
-       
+            response.setContentType("text/html;charset=UTF-8");
+            if(request.getParameter("password").equals("1234") && request.getParameter("user").equals("pulga")){
+                request.getSession().setAttribute("user",  request.getParameter("user"));
+                request.getSession().setAttribute("privilege", "Admin");
+                request.getSession(true);
+                request.getSession().setMaxInactiveInterval(300);
+                request.getRequestDispatcher("inicio.jsp").forward(request, response);
+            }else{
+                request.getRequestDispatcher("ErrorLogin").forward(request, response);
+            }       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
