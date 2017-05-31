@@ -100,7 +100,7 @@
                             <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${sessionScope.user}  <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                   
-                                    <li class=""><a href="ServletSignOut">Cerrar sesión</a></li>
+                                    <li class=""><a href="ServletSignOut">Cerrar sesión Hola</a></li>
                                     
                                     
                                 </ul>
