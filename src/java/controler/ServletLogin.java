@@ -1,7 +1,7 @@
 
 package controler;
 
-import conexion.Conexion;
+import Datos.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
