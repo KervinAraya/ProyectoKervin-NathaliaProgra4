@@ -2,6 +2,7 @@
 package controler;
 
 import Datos.Conexion;
+import Datos.InicioSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.System.out;
@@ -33,9 +34,10 @@ public class ServletLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             response.setContentType("text/html;charset=UTF-8");
-            if(request.getParameter("password").equals("1234") && request.getParameter("user").equals("pulga")){
-                request.getSession().setAttribute("user",  request.getParameter("user"));
-                request.getSession().setAttribute("privilege", "Admin");
+            InicioSession inicioSession = new InicioSession(request.getParameter("user"), request.getParameter("password"));
+            if(inicioSession.consultarUsuario()){
+                request.getSession().setAttribute("user", inicioSession.getUsuario());
+                request.getSession().setAttribute("privilege", inicioSession.getPrivilegio());
                 request.getSession(true);
                 request.getSession().setMaxInactiveInterval(300);
                 request.getRequestDispatcher("inicio.jsp").forward(request, response);

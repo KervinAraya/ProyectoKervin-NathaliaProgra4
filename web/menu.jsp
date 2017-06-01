@@ -15,7 +15,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
-
+    <% HttpSession sesion = request.getSession(); %>
     <body>
        <header>
       <div class="navbar-wrapper">
@@ -34,6 +34,20 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="<%if(request.getAttribute("active").equals("inicio"))out.println("active"); %>"><a href="inicio.jsp" class="">Inicio</a></li>
+                            <% if(sesion.getAttribute("privilege").equals("Admin")){
+                                out.println("<li class=");
+                                if(request.getAttribute("active").equals("socios"))out.println("active");
+                                out.println(">");
+                                out.println("<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Socios <span class='caret'></span></a>");
+                                out.println("<ul class='dropdown-menu'>");  
+                                        out.println("<li><a href='asociados/seleccionver.html'>Ver socios</a></li>");
+                                        out.println("<li><a href='asociados/registro.html'>Añadir socio</a></li>");
+                                        out.println("<li><a href='asociados/eliminar.html'>Eliminar socio</a></li>");
+                                        out.println("<li><a href='asociados/modificar.html'>Modificar socio</a></li>");
+                                 out.println("</ul>");           
+                            out.println("</li>");
+                            }
+                               %>
                             <li class="dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empleados <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="empleados/seleccionver.html">Ver empleados</a></li>
@@ -91,4 +105,4 @@
         </div>
     </div>
   </header>
-
+                                

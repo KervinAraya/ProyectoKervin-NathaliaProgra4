@@ -19,7 +19,7 @@ public class Conexion {
       if (conexion == null) {
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.1.7/DBProyecto", "root", "");
+            conexion = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.43.3/DBProyecto", "progra", "");
          } catch (SQLException ex) {
             throw new SQLException(ex);
          } catch (ClassNotFoundException ex) {
