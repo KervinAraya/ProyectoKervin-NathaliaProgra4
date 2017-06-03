@@ -15,7 +15,11 @@
   
 <head>
 	<title>Inicio</title>
+        <meta charset="UTF-8">
+	
         <jsp:include page="menu.jsp" />
+        <link rel='stylesheet' href='css/inicio/style.css'>
+</head>
 
  	<main>
             <div class="[ container text-center ]"></div>

@@ -24,16 +24,21 @@ public class InicioSession {
         this.contrasena=contrasena;
         
     }
-    public boolean consultarUsuario(){
-        boolean bandera=false;
+    public String consultarUsuario(){
+        String bandera="";
+        Statement statement = null;
         try{
-           Statement statement = conexion.obtener().createStatement();
-           ResultSet re = statement.executeQuery("SELECT usuario, privilegio FROM Usuarios WHERE usuario='"+usuario+"' and contrasena='"+contrasena+"'");
-           while(re.next()){
-               bandera=true;
-               this.privilegio=re.getString("privilegio");
-           }
-        }catch(Exception e){}
+           statement = conexion.obtener().createStatement();
+        }catch(Exception e){bandera="Error al conectar con la base de datos";}           
+        if(bandera.equals("")){
+            try{   
+               ResultSet re = statement.executeQuery("SELECT usuario, privilegio FROM Usuarios WHERE usuario='"+usuario+"' and contrasena='"+contrasena+"'");
+               while(re.next()){
+                   bandera="1";
+                   this.privilegio=re.getString("privilegio");
+               }
+            }catch(Exception e){bandera="Error al seleccionar el usuario";}
+        }
         return bandera;
     }
     public String getUsuario(){

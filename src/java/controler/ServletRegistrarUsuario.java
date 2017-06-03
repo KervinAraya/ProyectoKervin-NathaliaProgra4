@@ -1,26 +1,26 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controler;
 
-import Datos.Conexion;
-import Datos.InicioSession;
+import Bean.BeanUsuario;
+import Datos.InsertarUsuarios;
 import java.io.IOException;
-import java.io.PrintWriter;
-import static java.lang.System.out;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author kervin
  */
-@WebServlet(name = "ServletLogin", urlPatterns = {"/ServletLogin"})
-public class ServletLogin extends HttpServlet {
+@WebServlet(name = "ServletRegistrarUsuario", urlPatterns = {"/ServletRegistrarUsuario"})
+public class ServletRegistrarUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,24 +33,17 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            InicioSession inicioSession = new InicioSession(request.getParameter("user"), request.getParameter("password"));
-            String mensaje=inicioSession.consultarUsuario();
-            if(mensaje.equals("1")){
-                request.getSession().setAttribute("user", inicioSession.getUsuario());
-                request.getSession().setAttribute("privilege", inicioSession.getPrivilegio());
-                request.getSession(true);
-                request.getSession().setMaxInactiveInterval(300);
-                request.getRequestDispatcher("WEB-INF/inicio.jsp").forward(request, response);
-            }else{
-                if(mensaje.equals("")){
-                    mensaje="Error contraseña o usuario incorrectos";
-                }
-                request.setAttribute("error", mensaje);
-                request.getRequestDispatcher("ErrorLogin").forward(request, response);
-            }       
+        response.setContentType("text/html;charset=UTF-8");
+        BeanUsuario beanUsuario = new BeanUsuario(request.getParameter("nombre"), request.getParameter("apellido1"), request.getParameter("apellido2"), request.getParameter("cedula"), request.getParameter("telefono"), request.getParameter("correo"), request.getParameter("direccion"), request.getParameter("avatar"), request.getParameter("contrasena"), request.getParameter("usuario"), request.getParameter("privilegio"));
+        InsertarUsuarios insertarUsuarios = new InsertarUsuarios(beanUsuario);
+        String res=insertarUsuarios.insertarUsuario();
+        if(res.equals("1")){
+            request.getRequestDispatcher("registrarUsuario").forward(request, response);
+        }else{
+            request.setAttribute("error", res);
+           request.getRequestDispatcher("ErrorLogin").forward(request, response);
+        }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -63,7 +56,6 @@ public class ServletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
         processRequest(request, response);
     }
 

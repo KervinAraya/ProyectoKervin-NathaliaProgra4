@@ -1,26 +1,21 @@
 
-package controler;
+package view;
 
-import Datos.Conexion;
-import Datos.InicioSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author kervin
  */
-@WebServlet(name = "ServletLogin", urlPatterns = {"/ServletLogin"})
-public class ServletLogin extends HttpServlet {
+@WebServlet(name = "ErrorLogin", urlPatterns = {"/ErrorLogin"})
+public class Error extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,22 +28,15 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            InicioSession inicioSession = new InicioSession(request.getParameter("user"), request.getParameter("password"));
-            String mensaje=inicioSession.consultarUsuario();
-            if(mensaje.equals("1")){
-                request.getSession().setAttribute("user", inicioSession.getUsuario());
-                request.getSession().setAttribute("privilege", inicioSession.getPrivilegio());
-                request.getSession(true);
-                request.getSession().setMaxInactiveInterval(300);
-                request.getRequestDispatcher("WEB-INF/inicio.jsp").forward(request, response);
-            }else{
-                if(mensaje.equals("")){
-                    mensaje="Error contraseña o usuario incorrectos";
-                }
-                request.setAttribute("error", mensaje);
-                request.getRequestDispatcher("ErrorLogin").forward(request, response);
-            }       
+        response.setContentType("text/html;charset=UTF-8");
+       
+       try (PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
+            out.println("<!DOCTYPE html>");
+            out.println("<h1>"+request.getAttribute("error")+"</h1>");
+            out.println("<h1><a href='"+request.getServletPath()+"'>Regresar</a></h1>");    
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,7 +51,6 @@ public class ServletLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
         processRequest(request, response);
     }
 

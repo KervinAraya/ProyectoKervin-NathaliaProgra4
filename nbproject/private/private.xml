@@ -3,12 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/filtters/FiltrerSession.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/menu.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InicioSession.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/Error.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletRegistrarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/index.jsp</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/inicio.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/principal.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletLogin.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/Conexion.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/registrarUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InsertarUsuarios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/filtters/SesionActive.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/nbproject/build-impl.xml</file>
         </group>
     </open-files>
 </project-private>

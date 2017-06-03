@@ -17,20 +17,20 @@ public class Conexion {
    private static Connection conexion = null;
    public static Connection obtener() throws SQLException, ClassNotFoundException {
       if (conexion == null) {
-         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexion = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.43.3/DBProyecto", "progra", "");
-         } catch (SQLException ex) {
-            throw new SQLException(ex);
-         } catch (ClassNotFoundException ex) {
-            throw new ClassCastException(ex.getMessage());
-         }
+        
+        Class.forName("com.mysql.jdbc.Driver");
+        conexion = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.43.3/DBProyecto", "progra", "");
+        
       }
       return conexion;
    }
-   public static void cerrar() throws SQLException {
+   public static void cerrar(){
       if (conexion != null) {
-         conexion.close();
+          try{
+             conexion.close();
+             conexion=null;
+          }catch(Exception e){}
+         
       }
    }
     

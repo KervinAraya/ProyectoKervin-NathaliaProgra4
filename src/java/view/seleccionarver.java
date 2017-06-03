@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package view;
 
 import java.io.IOException;
@@ -8,14 +12,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author kervin
  */
-@WebServlet(name = "ErrorLogin", urlPatterns = {"/ErrorLogin"})
-public class ErrorLogin extends HttpServlet {
+@WebServlet(name = "seleccionarver", urlPatterns = {"/seleccionarver"})
+public class seleccionarver extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,13 +32,7 @@ public class ErrorLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
-       try (PrintWriter out = response.getWriter()) {
-            HttpSession session = request.getSession();
-            out.println("<!DOCTYPE html>");
-            out.println("<h1>Error contraseña incorrecta</h1>");
-            out.println("</html>");
-        }
+        request.getRequestDispatcher("WEB-INF/usuarios/seleccionarver.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

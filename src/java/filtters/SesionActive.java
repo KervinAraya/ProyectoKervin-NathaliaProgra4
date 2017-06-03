@@ -22,34 +22,74 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author kervin
  */
-@WebFilter(filterName = "FiltrerSession", urlPatterns = {"/inicio.jsp"})
-public class FiltrerSession implements Filter {
+@WebFilter(filterName = "SesionActive", urlPatterns = {"/registrarUsuario", "/principal"})
+public class SesionActive implements Filter {
     
     private static final boolean debug = true;
 
-   
+    // The filter configuration object we are associated with.  If
+    // this value is null, this filter instance is not currently
+    // configured. 
     private FilterConfig filterConfig = null;
     
-    public FiltrerSession() {
+    public SesionActive() {
     }    
     
     private void doBeforeProcessing(ServletRequest re, ServletResponse response)
             throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) re;
         if (debug) {
-            
-        }
-
-    }    
-    
-    private void doAfterProcessing(ServletRequest re, ServletResponse response)
-            throws IOException, ServletException {
-        if (debug) {
-            HttpServletRequest request = (HttpServletRequest) re;
             if(request.getSession().getAttribute("user")==null){
                 request.getRequestDispatcher("index.jsp").forward(re, response);
             }
-            log("FiltrerSession:DoBeforeProcessing");
+            log("SesionActive:DoBeforeProcessing");
         }
+
+        // Write code here to process the request and/or response before
+        // the rest of the filter chain is invoked.
+        // For example, a logging filter might log items on the request object,
+        // such as the parameters.
+        /*
+	for (Enumeration en = request.getParameterNames(); en.hasMoreElements(); ) {
+	    String name = (String)en.nextElement();
+	    String values[] = request.getParameterValues(name);
+	    int n = values.length;
+	    StringBuffer buf = new StringBuffer();
+	    buf.append(name);
+	    buf.append("=");
+	    for(int i=0; i < n; i++) {
+	        buf.append(values[i]);
+	        if (i < n-1)
+	            buf.append(",");
+	    }
+	    log(buf.toString());
+	}
+         */
+    }    
+    
+    private void doAfterProcessing(ServletRequest request, ServletResponse response)
+            throws IOException, ServletException {
+        if (debug) {
+            log("SesionActive:DoAfterProcessing");
+        }
+
+        // Write code here to process the request and/or response after
+        // the rest of the filter chain is invoked.
+        // For example, a logging filter might log the attributes on the
+        // request object after the request has been processed. 
+        /*
+	for (Enumeration en = request.getAttributeNames(); en.hasMoreElements(); ) {
+	    String name = (String)en.nextElement();
+	    Object value = request.getAttribute(name);
+	    log("attribute: " + name + "=" + value.toString());
+
+	}
+         */
+        // For example, a filter might append something to the response.
+        /*
+	PrintWriter respOut = new PrintWriter(response.getWriter());
+	respOut.println("<P><B>This has been appended by an intrusive filter.</B>");
+         */
     }
 
     /**
@@ -66,7 +106,7 @@ public class FiltrerSession implements Filter {
             throws IOException, ServletException {
         
         if (debug) {
-            log("FiltrerSession:doFilter()");
+            log("SesionActive:doFilter()");
         }
         
         doBeforeProcessing(request, response);
@@ -126,7 +166,7 @@ public class FiltrerSession implements Filter {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
             if (debug) {                
-                log("FiltrerSession:Initializing filter");
+                log("SesionActive:Initializing filter");
             }
         }
     }
@@ -137,9 +177,9 @@ public class FiltrerSession implements Filter {
     @Override
     public String toString() {
         if (filterConfig == null) {
-            return ("FiltrerSession()");
+            return ("SesionActive()");
         }
-        StringBuffer sb = new StringBuffer("FiltrerSession(");
+        StringBuffer sb = new StringBuffer("SesionActive(");
         sb.append(filterConfig);
         sb.append(")");
         return (sb.toString());

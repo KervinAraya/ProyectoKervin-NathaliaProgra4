@@ -5,15 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-	<meta charset="UTF-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="js/inicio/script.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel='stylesheet' href='css/menu/style.css'>
-	<link rel='stylesheet' href='css/inicio/style.css'>
+	<link rel='stylesheet' href='../css/inicio/style.css'>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 </head>
     <% HttpSession sesion = request.getSession(); %>
     <body>
@@ -33,7 +30,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="<%if(request.getAttribute("active").equals("inicio"))out.println("active"); %>"><a href="inicio.jsp" class="">Inicio</a></li>
+                            <li class="<%if(request.getAttribute("active").equals("inicio"))out.println("active"); %>"><a href="principal" class="">Inicio</a></li>
                             <% if(sesion.getAttribute("privilege").equals("Admin")){
                                 out.println("<li class=");
                                 if(request.getAttribute("active").equals("socios"))out.println("active");
@@ -48,12 +45,12 @@
                             out.println("</li>");
                             }
                                %>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empleados <span class="caret"></span></a>
+                            <li class="<%if(request.getAttribute("active").equals("usuarios"))out.println("active"); %>"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="empleados/seleccionver.html">Ver empleados</a></li>
-                                        <li><a href="empleados/registro.html">Añadir empleado</a></li>
-                                        <li><a href="empleados/eliminar.html">Eliminar empleado</a></li>
-                                        <li><a href="empleados/modificar.html">Modificar empleado</a></li>
+                                        <li><a href="seleccionarver">Ver Usuario</a></li>
+                                        <li><a href="registrarUsuario">Añadir Usuario</a></li>
+                                        <li><a href="empleados/eliminar.html">Eliminar Usuario</a></li>
+                                        <li><a href="empleados/modificar.html">Modificar Usuario</a></li>
                                     </ul>
                                 </li>
                             <li class=" <%if(request.getAttribute("active").equals("productos"))out.println("active"); %>"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
