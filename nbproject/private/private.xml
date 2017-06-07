@@ -5,13 +5,18 @@
         <group>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InicioSession.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/Error.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/menu.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletRegistrarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/index.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/Conexion.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InsertarUsuarios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/seleccionarver.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/inicio.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/principal.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletLogin.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/Conexion.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/registrarUsuario.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InsertarUsuarios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/seleccionarver.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/registrarUsuarios.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/filtters/SesionActive.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/nbproject/build-impl.xml</file>
         </group>

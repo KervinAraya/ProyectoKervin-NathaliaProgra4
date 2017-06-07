@@ -11,7 +11,8 @@
 <head>
 	<title>Ver Socios</title>
 	<meta charset="UTF-8">
-        <jsp:include page="../menu.jsp" />
+        <link rel='stylesheet' href='../css/inicio/style.css'>
+        <jsp:include page="../menu.jsp"/>
 
 
  	<main>
