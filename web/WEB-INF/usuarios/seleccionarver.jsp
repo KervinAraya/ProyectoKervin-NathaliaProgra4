@@ -11,11 +11,12 @@
 <head>
 	<title>Ver Socios</title>
 	<meta charset="UTF-8">
-        <link rel='stylesheet' href='../css/inicio/style.css'>
+        <link rel='stylesheet' href='css/inicio/style.css'>
         <jsp:include page="../menu.jsp"/>
 
 
  	<main>
+          
 		<div class="[ container text-center ]">
        
 			<div class="[ row ]">
@@ -25,7 +26,7 @@
 		                <ul class="[ nav nav-justified ]" id="nav-tabs" role="tablist">
 		                
 		                     <li role="presentation" class="">
-		                        <a href="vertodos.html" id="izquierda">
+		                        <a href="verTodosUsuarios" id="izquierda">
 		                            <img class="img-circle" src="imagenes/empleados.jpg"  style="width: 200px;height: 200px;" />
 		                            <span class="quote"><i class="fa fa-quote-left"></i></span>
 		                            <h4>VER TODOS</h4>
@@ -34,7 +35,7 @@
 		                    </li>
 		                    
 		                    <li role="presentation" class="">
-		                        <a href="seleccionar.html" id="derecha">
+		                        <a href="seleccionarUsuario" id="derecha">
 		                            <img class="img-circle" src="imagenes/empleado.jpg"  style="width: 200px;height: 200px;"  />
 		                            <span class="quote"><i class="fa fa-quote-left"></i></span>
 		                            <h4>EMPLEADO ESPECIFICO</h4>

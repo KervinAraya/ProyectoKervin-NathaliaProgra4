@@ -23,6 +23,21 @@ public class BeanUsuario {
     private String usuario;
     private String privilegio;
 
+    public BeanUsuario(){
+        
+        this.cedula="";
+        this.nombre="";
+        this.apellido1="";
+        this.apellido2="";
+        this.avatar="";
+        this.telefono="";
+        this.contrasena="";
+        this.correo="";
+        this.direccion="";
+        this.usuario="";
+        this.privilegio="";
+        
+    }
     public BeanUsuario(String nombre, String apellido1, String apellido2, String cedula, String telefono, String correo, String direccion, String avatar, String contrasena, String usuario, String privilegio) {
         this.nombre = nombre;
         this.apellido1 = apellido1;

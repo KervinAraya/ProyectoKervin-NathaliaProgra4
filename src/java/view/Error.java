@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,12 +30,11 @@ public class Error extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
        try (PrintWriter out = response.getWriter()) {
             HttpSession session = request.getSession();
             out.println("<!DOCTYPE html>");
             out.println("<h1>"+request.getAttribute("error")+"</h1>");
-            out.println("<h1><a href='"+request.getServletPath()+"'>Regresar</a></h1>");    
+            out.println("<h1><a href='principal'>Regresar pagina principal</a></h1>");    
             out.println("</html>");
         }
     }

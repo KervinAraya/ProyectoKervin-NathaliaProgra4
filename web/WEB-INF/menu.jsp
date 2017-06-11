@@ -38,21 +38,27 @@
                                 out.println("<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Socios <span class='caret'></span></a>");
                                 out.println("<ul class='dropdown-menu'>");  
                                         out.println("<li><a href='asociados/seleccionver.html'>Ver socios</a></li>");
-                                        out.println("<li><a href='asociados/registro.html'>Añadir socio</a></li>");
+                                        out.println("<li><a href='registrarSocio'>Añadir socio</a></li>");
                                         out.println("<li><a href='asociados/eliminar.html'>Eliminar socio</a></li>");
                                         out.println("<li><a href='asociados/modificar.html'>Modificar socio</a></li>");
                                  out.println("</ul>");           
                             out.println("</li>");
                             }
+                            if(sesion.getAttribute("privilege").equals("Admin")){
+                                out.println("<li class=");
+                                if(request.getAttribute("active").equals("Usuarios"))out.println("active");
+                                out.println(">");
+                                out.println("<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Usuarios <span class='caret'></span></a>");
+                                out.println("<ul class='dropdown-menu'>");  
+                                        out.println("<li><a href='seleccionarver'>Ver Usuario</a></li>");
+                                        out.println("<li><a href='registrarUsuario'>Añadir Usuario</a></li>");
+                                        out.println("<li><a href='eliminarUsuario'>Eliminar Usuario</a></li>");
+                                        out.println("<li><a href='modificarUsuario'>Modificar Usuario</a></li>");
+                                 out.println("</ul>");           
+                              out.println("</li>");
+                            }
                                %>
-                            <li class="<%if(request.getAttribute("active").equals("usuarios"))out.println("active"); %>"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="seleccionarver">Ver Usuario</a></li>
-                                        <li><a href="registrarUsuario">Añadir Usuario</a></li>
-                                        <li><a href="empleados/eliminar.html">Eliminar Usuario</a></li>
-                                        <li><a href="empleados/modificar.html">Modificar Usuario</a></li>
-                                    </ul>
-                                </li>
+                          
                             <li class=" <%if(request.getAttribute("active").equals("productos"))out.println("active"); %>"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="productos/seleccionar.html">Ver productos</a></li>
@@ -69,21 +75,7 @@
                                         <li><a href="ventas/añadir.html">Añadir venta</a></li>
                                         <li><a href="ventas/reembolso.html">Reembolso</a></li>
                                 </ul>
-                            </li>
-                            <li class=" <%if(request.getAttribute("active").equals("productos"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Materia prima <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="materiaprima/seleccionar.html">Ver productos lacteos</a></li>
-                                    <li><a href="materiaprima/registro.html">Registrar producto lacteo</a></li>
-                                    <li><a href="materiaprima/modificar.html">Modificar producto lacteo</a></li>
-
-                                </ul>
-                            </li>
-                                <li class=" <%if(request.getAttribute("active").equals("pago"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pagos <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="pagos/pago.html">Realizar pago de producto lacteo</a></li>
-                                        
-                                    </ul>
-                                </li>
+                            </li>                               
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                             <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${sessionScope.user}  <span class="caret"></span></a>

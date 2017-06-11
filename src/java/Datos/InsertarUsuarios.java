@@ -26,7 +26,7 @@ public class InsertarUsuarios {
             statement = conexion.obtener().createStatement();
          }catch(Exception e){bandera="Error al conectar con la base de datos";}
         try{
-            int cont = statement.executeUpdate("INSERT INTO Usuarios(ced_usuario,nombre_usuario,apellido1_usuario,apellido2_usuario,direccion_usuario,telefono_usuario,email_usuario,usuario,contrasena,privilegio,imagen_usuarios) VALUES('"+beanUsuarios.getCedula()+"','"+beanUsuarios.getNombre()+"','"+beanUsuarios.getApellido1()+"','"+beanUsuarios.getApellido2()+"','"+beanUsuarios.getDireccion()+"','"+beanUsuarios.getTelefono()+"','"+beanUsuarios.getCorreo()+"','"+beanUsuarios.getUsuario()+"','"+beanUsuarios.getContrasena()+"','"+beanUsuarios.getPrivilegio()+"','"+beanUsuarios.getAvatar()+"')");
+            int cont = statement.executeUpdate("INSERT INTO Usuarios(ced_usuario,nombre_usuario,apellido1_usuario,apellido2_usuario,direccion_usuario,telefono_usuario,email_usuario,usuario,contrasena,privilegios,imagen_usuarios) VALUES('"+beanUsuarios.getCedula()+"','"+beanUsuarios.getNombre()+"','"+beanUsuarios.getApellido1()+"','"+beanUsuarios.getApellido2()+"','"+beanUsuarios.getDireccion()+"','"+beanUsuarios.getTelefono()+"','"+beanUsuarios.getCorreo()+"','"+beanUsuarios.getUsuario()+"','"+beanUsuarios.getContrasena()+"','"+beanUsuarios.getPrivilegio()+"','"+beanUsuarios.getAvatar()+"')");
             if(cont>0){
                 bandera="1";
             }

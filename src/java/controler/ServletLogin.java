@@ -33,7 +33,6 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            response.setContentType("text/html;charset=UTF-8");
             InicioSession inicioSession = new InicioSession(request.getParameter("user"), request.getParameter("password"));
             String mensaje=inicioSession.consultarUsuario();
             if(mensaje.equals("1")){
@@ -41,7 +40,7 @@ public class ServletLogin extends HttpServlet {
                 request.getSession().setAttribute("privilege", inicioSession.getPrivilegio());
                 request.getSession(true);
                 request.getSession().setMaxInactiveInterval(300);
-                request.getRequestDispatcher("WEB-INF/inicio.jsp").forward(request, response);
+                request.getRequestDispatcher("principal").forward(request, response);
             }else{
                 if(mensaje.equals("")){
                     mensaje="Error contraseña o usuario incorrectos";

@@ -32,12 +32,12 @@ public class InicioSession {
         }catch(Exception e){bandera="Error al conectar con la base de datos";}           
         if(bandera.equals("")){
             try{   
-               ResultSet re = statement.executeQuery("SELECT usuario, privilegio FROM Usuarios WHERE usuario='"+usuario+"' and contrasena='"+contrasena+"'");
+               ResultSet re = statement.executeQuery("SELECT usuario, privilegios FROM Usuarios WHERE usuario='"+usuario+"' and contrasena='"+contrasena+"'");
                while(re.next()){
                    bandera="1";
-                   this.privilegio=re.getString("privilegio");
+                   this.privilegio=re.getString("privilegios");
                }
-            }catch(Exception e){bandera="Error al seleccionar el usuario";}
+            }catch(Exception e){bandera="Datos incorrectos";}
         }
         return bandera;
     }
