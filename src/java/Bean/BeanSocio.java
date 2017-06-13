@@ -106,6 +106,4 @@ public class BeanSocio {
         this.usuarioRegistro = usuarioRegistro;
     }
     
-    
-    
 }

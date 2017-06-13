@@ -37,10 +37,10 @@
                                 out.println(">");
                                 out.println("<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Socios <span class='caret'></span></a>");
                                 out.println("<ul class='dropdown-menu'>");  
-                                        out.println("<li><a href='asociados/seleccionver.html'>Ver socios</a></li>");
+                                        out.println("<li><a href='seleccionarverSocios'>Ver socios</a></li>");
                                         out.println("<li><a href='registrarSocio'>Añadir socio</a></li>");
-                                        out.println("<li><a href='asociados/eliminar.html'>Eliminar socio</a></li>");
-                                        out.println("<li><a href='asociados/modificar.html'>Modificar socio</a></li>");
+                                        out.println("<li><a href='eliminarSocio'>Eliminar socio</a></li>");
+                                        out.println("<li><a href='modificarSocio'>Modificar socio</a></li>");
                                  out.println("</ul>");           
                             out.println("</li>");
                             }

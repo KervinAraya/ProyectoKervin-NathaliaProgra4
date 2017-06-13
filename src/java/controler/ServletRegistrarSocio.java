@@ -5,6 +5,9 @@
  */
 package controler;
 
+import Bean.BeanSocio;
+import Bean.BeanUsuario;
+import Datos.InsertarSocio;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,7 +34,15 @@ public class ServletRegistrarSocio extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        BeanSocio beanSocio = new BeanSocio(request.getParameter("cedula"), request.getParameter("nombre"), request.getParameter("apellido1"), request.getParameter("apellido2"), request.getParameter("direccion"), request.getParameter("telefono"), request.getParameter("correo"),(String)request.getSession().getAttribute("user"));
+        InsertarSocio insertarSocio = new InsertarSocio(beanSocio);
+        String res=insertarSocio.insertarSocio();
+        if(res.equals("1")){
+            request.getRequestDispatcher("registrarSocio").forward(request, response);
+        }else{
+            request.setAttribute("error", res);
+           request.getRequestDispatcher("ErrorLogin").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

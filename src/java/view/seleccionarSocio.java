@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kervin
  */
-@WebServlet(name = "seleccionarUsuario", urlPatterns = {"/seleccionarUsuario"})
-public class seleccionarUsuario extends HttpServlet {
+@WebServlet(name = "seleccionarSocio", urlPatterns = {"/seleccionarSocio"})
+public class seleccionarSocio extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,9 +31,8 @@ public class seleccionarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
          if(request.getSession().getAttribute("privilege").equals("Admin")){
-              request.getRequestDispatcher("WEB-INF/usuarios/seleccionar.jsp").forward(request, response);
+               request.getRequestDispatcher("WEB-INF/socios/seleccionar.jsp").forward(request, response);
         }else{
             request.setAttribute("error", "No tiene privilegios para acceder");
             

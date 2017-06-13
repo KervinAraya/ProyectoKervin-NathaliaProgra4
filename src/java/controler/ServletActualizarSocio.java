@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controler;
 
+import Bean.BeanSocio;
+import Datos.ModificarSocio;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kervin
  */
-@WebServlet(name = "seleccionarUsuario", urlPatterns = {"/seleccionarUsuario"})
-public class seleccionarUsuario extends HttpServlet {
+@WebServlet(name = "ServletActualizarSocio", urlPatterns = {"/ServletActualizarSocio"})
+public class ServletActualizarSocio extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,12 +33,13 @@ public class seleccionarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-         if(request.getSession().getAttribute("privilege").equals("Admin")){
-              request.getRequestDispatcher("WEB-INF/usuarios/seleccionar.jsp").forward(request, response);
+        BeanSocio beanUsuario = new BeanSocio(request.getParameter("cedula"),request.getParameter("nombre"), request.getParameter("apellido1"), request.getParameter("apellido2"),  request.getParameter("direccion"), request.getParameter("telefono"), request.getParameter("correo"), "");
+        ModificarSocio modificarUsuario = new ModificarSocio(beanUsuario);
+        String respuesta = modificarUsuario.updateUsuario();
+        if(respuesta.equals("1")){
+            request.getRequestDispatcher("modificarSocio").forward(request, response);
         }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");
-            
+            request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
     }

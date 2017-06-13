@@ -144,7 +144,7 @@
                             <label>Correo Electronico</label>
                             <input type="text" id="correo" name="correo" onblur="validarCorreo();" placeholder="Ingrese la direccion de correo electronico" class="form-control">
                         </div> 
-                            <input type="subtmit" class="btnRegistro" value="Registrar">                 
+                            <input type="submit" class="btnRegistro" value="Registrar">                 
                         </div>
                     </form> 
                  </div>

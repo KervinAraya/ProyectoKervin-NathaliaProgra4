@@ -5,6 +5,8 @@
  */
 package view;
 
+import Datos.BuscarTodosSocios;
+import Datos.BuscarTodosUsuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kervin
  */
-@WebServlet(name = "seleccionarUsuario", urlPatterns = {"/seleccionarUsuario"})
-public class seleccionarUsuario extends HttpServlet {
+@WebServlet(name = "verTodosSocios", urlPatterns = {"/verTodosSocios"})
+public class verTodosSocios extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,12 +33,13 @@ public class seleccionarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-         if(request.getSession().getAttribute("privilege").equals("Admin")){
-              request.getRequestDispatcher("WEB-INF/usuarios/seleccionar.jsp").forward(request, response);
+        BuscarTodosSocios buscarTodos = new BuscarTodosSocios();
+        String respuesta = buscarTodos.getSocios();
+        if(respuesta.equals("1")){
+           request.setAttribute("ListaSocios",buscarTodos.getBenSocios());
+           request.getRequestDispatcher("WEB-INF/socios/vertodos.jsp").forward(request, response);
         }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");
-            
+            request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
     }
