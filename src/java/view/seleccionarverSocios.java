@@ -32,7 +32,7 @@ public class seleccionarverSocios extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-           if(request.getSession().getAttribute("privilege").equals("Admin")){
+        if(request.getSession().getAttribute("privilege").equals("Admin")){
                request.getRequestDispatcher("WEB-INF/socios/seleccionarver.jsp").forward(request, response);
         }else{
             request.setAttribute("error", "No tiene privilegios para acceder");

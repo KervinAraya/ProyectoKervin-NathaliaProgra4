@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controler;
 
-import Datos.BuscarTodosUsuarios;
+import Datos.BuscarTodosSocios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kervin
  */
-@WebServlet(name = "verTodosUsuarios", urlPatterns = {"/verTodosUsuarios"})
-public class verTodosUsuarios extends HttpServlet {
+@WebServlet(name = "PaginarTodosSocios", urlPatterns = {"/PaginarTodosSocios"})
+public class PaginarTodosSocios extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,19 +32,13 @@ public class verTodosUsuarios extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("privilege").equals("Admin")){
-            BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios(0);
-            String respuesta = buscarTodos.getUsuarios();
-            if(respuesta.equals("1")){
-               request.setAttribute("ListaUsuarios",buscarTodos.getBenUsuarios());
-               request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
-               request.getRequestDispatcher("WEB-INF/usuarios/verTodos.jsp").forward(request, response);
-            }else{
-                request.setAttribute("error",respuesta);
-                request.getRequestDispatcher("ErrorLogin").forward(request, response);
-            }
+        BuscarTodosSocios buscarTodos = new BuscarTodosSocios(Integer.parseInt(request.getParameter("pagina"))*5);
+        String respuesta = buscarTodos.getSocios();
+        if(respuesta.equals("1")){
+           request.setAttribute("ListaSocios",buscarTodos.getBenSocios());
+           request.getRequestDispatcher("ListarSocios").forward(request, response);
         }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");            
+            request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
     }

@@ -61,19 +61,18 @@
                           
                             <li class=" <%if(request.getAttribute("active").equals("productos"))out.println("active"); %>"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="productos/seleccionar.html">Ver productos</a></li>
-                                    <li><a href="productos/registro.html">Registrar productos</a></li>
-                                    <li><a href="productos/sinnombre.html"> Añadir productos</a></li>
-                                    <li><a href="productos/eliminar.html">Eliminar productos</a></li>
-                                    <li><a href="productos/modificar.html">Modificar productos</a></li>
+                                    <li><a href="verProductos">Ver productos</a></li>
+                                    <li><a href="registrarProducto"> Añadir productos</a></li>
+                                    <li><a href="modificarProductos">Modificar productos</a></li>
+                                    <li><a href="eliminarProducto">Eliminar productos</a></li>
+                                    
                                         
                                 </ul>
                             </li>
                             <li class=" <%if(request.getAttribute("active").equals("ventas"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ventas <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                        <li><a href="ventas/seleccionar.html">Ver ventas</a></li>
-                                        <li><a href="ventas/añadir.html">Añadir venta</a></li>
-                                        <li><a href="ventas/reembolso.html">Reembolso</a></li>
+                                        <li><a href="verVentas">Ver ventas</a></li>
+                                        <li><a href="vender">General venta</a></li>
                                 </ul>
                             </li>                               
                         </ul>

@@ -32,8 +32,8 @@ public class ServletBuscarTodosUsuarios extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios();
+       /*
+        BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios(0);
         String respuesta = buscarTodos.getUsuarios();
         if(respuesta.equals("1")){
            request.setAttribute("ListaUsuarios",buscarTodos.getBenUsuarios());
@@ -42,7 +42,7 @@ public class ServletBuscarTodosUsuarios extends HttpServlet {
             request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
-        
+        */
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -5,9 +5,10 @@
  */
 package view;
 
-import Datos.BuscarTodosUsuarios;
+import Bean.BeanUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kervin
  */
-@WebServlet(name = "verTodosUsuarios", urlPatterns = {"/verTodosUsuarios"})
-public class verTodosUsuarios extends HttpServlet {
+@WebServlet(name = "ListarUsuarios", urlPatterns = {"/ListarUsuarios"})
+public class ListarUsuarioss extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,20 +33,30 @@ public class verTodosUsuarios extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("privilege").equals("Admin")){
-            BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios(0);
-            String respuesta = buscarTodos.getUsuarios();
-            if(respuesta.equals("1")){
-               request.setAttribute("ListaUsuarios",buscarTodos.getBenUsuarios());
-               request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
-               request.getRequestDispatcher("WEB-INF/usuarios/verTodos.jsp").forward(request, response);
-            }else{
-                request.setAttribute("error",respuesta);
-                request.getRequestDispatcher("ErrorLogin").forward(request, response);
-            }
-        }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");            
-            request.getRequestDispatcher("ErrorLogin").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {                       
+            ArrayList<BeanUsuario> listaUsuarios = (ArrayList<BeanUsuario>) request.getAttribute("ListaUsuarios");
+            if(listaUsuarios!=null){
+               for(BeanUsuario x: listaUsuarios){
+                    out.println("<tr>");
+                    out.println("<td>");
+                    out.println(x.getCedula());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(x.getNombre()+" "+x.getApellido1()+" "+x.getApellido2());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(x.getCorreo());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(x.getDireccion());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(x.getTelefono());
+                    out.println("</td>");
+                    out.println("</tr>");
+                }   
+            }  
         }
     }
 

@@ -3,18 +3,40 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarUsuarioEliminar.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/modificarUsuario.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/verProductos.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/verTodosSocios.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletActualizarUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/verTodos.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/eliminarSocio.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InsertarUsuarios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/PaginarTodosUsuarios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletRegistrarSocio.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/ventas/vender.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/modificarProductos.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletLogin.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/filtters/SesionActive.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/socios/vertodos.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/EliminarUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarTodosUsuarios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/PaginarTodosSocios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/BuscarTodosSocios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/ListarSocios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/Conexion.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/registrarSocio.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/ListarUsuarioss.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/seleccionarSocio.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/ventas/verVentas.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/socios/agregarSocio.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Bean/BeanUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/META-INF/context.xml</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarUsuarioEliminar.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/modificarUsuario.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/menu.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletRegistrarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/index.jsp</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/verTodos.jsp</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InsertarUsuarios.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/modificarSocio.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InsertarSocio.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletRegistrarSocio.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Bean/BeanSocio.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/seleccionarver.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/seleccionar.jsp</file>
@@ -23,31 +45,30 @@
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/principal.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/eliminarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/seleccionarverSocios.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletLogin.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/filtters/SesionActive.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/verVentas.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/verTodosUsuarios.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/socios/vertodos.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/BuscarUsuario.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/EliminarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/InicioSession.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/Error.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/seleccionarUsuario.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarTodosUsuarios.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/BuscarTodosSocios.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/productos/modificar.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/vender.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/eliminarUsuario.jsp</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/Conexion.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/eliminarProducto.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletBuscarUsuarioModificar.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/registrarSocio.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/modificarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/ModificarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Datos/BuscarTodosUsuarios.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/socios/agregarSocio.jsp</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/Bean/BeanUsuario.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/productos/registrar.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/productos/eliminarProducto.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/filtters/SessionIndex.java</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/socios/modificarSocio.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/productos/verProductos.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/controler/ServletElimiarUsuario.java</file>
-            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/META-INF/context.xml</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/registrarUsuario.java</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/seleccionarver.jsp</file>
             <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/web/WEB-INF/usuarios/registrarUsuarios.jsp</file>
+            <file>file:/home/kervin/NetBeansProjects/ProyectoFinal/ProyectoKervin-NathaliaProgra4/src/java/view/registrarProducto.java</file>
         </group>
     </open-files>
 </project-private>

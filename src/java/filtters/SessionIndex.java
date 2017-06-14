@@ -22,8 +22,8 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author kervin
  */
-@WebFilter(filterName = "SesionActive", urlPatterns = {"/registrarUsuario", "/principal","/eliminarSocio","/eliminarUsuario","/modificarSocio","/modificarUsuario","/registrarSocio","/seleccionarSocio","/seleccionarUsuario","/seleccionarver","/seleccionarverSocios","/verTodosSocios","/verTodosUsuarios","/registrarProducto","/modificarProductos","/verTodosSocios","/eliminarProducto","/vender","/verVentas"})
-public class SesionActive implements Filter {
+@WebFilter(filterName = "SessionIndex", urlPatterns = {"/index.jsp"})
+public class SessionIndex implements Filter {
     
     private static final boolean debug = true;
 
@@ -32,15 +32,15 @@ public class SesionActive implements Filter {
     // configured. 
     private FilterConfig filterConfig = null;
     
-    public SesionActive() {
+    public SessionIndex() {
     }    
     
     private void doBeforeProcessing(ServletRequest re, ServletResponse response)
             throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) re;
         if (debug) {
-            if(request.getSession().getAttribute("user")==null){
-                request.getRequestDispatcher("index.jsp").forward(re, response);
+            if(request.getSession().getAttribute("user")!=null){
+                request.getRequestDispatcher("principal").forward(re, response);
             }
             log("SesionActive:DoBeforeProcessing");
         }
@@ -70,7 +70,7 @@ public class SesionActive implements Filter {
     private void doAfterProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
-            log("SesionActive:DoAfterProcessing");
+            log("SessionIndex:DoAfterProcessing");
         }
 
         // Write code here to process the request and/or response after
@@ -106,7 +106,7 @@ public class SesionActive implements Filter {
             throws IOException, ServletException {
         
         if (debug) {
-            log("SesionActive:doFilter()");
+            log("SessionIndex:doFilter()");
         }
         
         doBeforeProcessing(request, response);
@@ -166,7 +166,7 @@ public class SesionActive implements Filter {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
             if (debug) {                
-                log("SesionActive:Initializing filter");
+                log("SessionIndex:Initializing filter");
             }
         }
     }
@@ -177,9 +177,9 @@ public class SesionActive implements Filter {
     @Override
     public String toString() {
         if (filterConfig == null) {
-            return ("SesionActive()");
+            return ("SessionIndex()");
         }
-        StringBuffer sb = new StringBuffer("SesionActive(");
+        StringBuffer sb = new StringBuffer("SessionIndex(");
         sb.append(filterConfig);
         sb.append(")");
         return (sb.toString());

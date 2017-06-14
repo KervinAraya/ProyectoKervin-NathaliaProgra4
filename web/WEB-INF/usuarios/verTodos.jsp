@@ -16,7 +16,17 @@
     <script src="js/tablas/script.js" ></script> 
     <link rel='stylesheet' href='css/formularios/registro.css'>
     <script src="js/empleados/scriptBuscarEmpleado.js"></script>
-   
+    <script>
+        function buscarPagina(pagina){
+            $(document).ready(function() {                   
+                    $.post('PaginarTodosUsuarios', {
+                            pagina : pagina
+                    }, function(responseText) {
+                            $('#filas').html(responseText);
+                    });
+            });
+        }
+    </script>
  	<main>
  		<div class="container">
  		 <h1 class="well">VER TODOS LOS EMPLEADOS</h1>
@@ -73,11 +83,18 @@
 		<div class="clearfix"></div>
 		<ul class="pagination pull-right">
 		  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-		  <li class="active"><a href="#">1</a></li>
-		  <li><a href="#">2</a></li>
-		  <li><a href="#">3</a></li>
-		  <li><a href="#">4</a></li>
-		  <li><a href="#">5</a></li>
+		 <%
+                     int contadoPaginasIniciales = 0;
+                     int numPaginas=0;
+                     int numeroElementos = (Integer) request.getAttribute("Cantidad");
+                     while(numeroElementos>=contadoPaginasIniciales){
+                         numPaginas++;
+                         contadoPaginasIniciales+=5;
+                     }
+                     for(int a=0;a<numPaginas;a++){
+                         out.println("<li class='active'><a href='javascript:buscarPagina("+a+");' id='generarTabla'> "+(a+1)+"</a></li>");
+                     }
+                  %>
 		  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
 		</ul>
 		                

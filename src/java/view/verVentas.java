@@ -5,7 +5,6 @@
  */
 package view;
 
-import Datos.BuscarTodosUsuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kervin
  */
-@WebServlet(name = "verTodosUsuarios", urlPatterns = {"/verTodosUsuarios"})
-public class verTodosUsuarios extends HttpServlet {
+@WebServlet(name = "verVentas", urlPatterns = {"/verVentas"})
+public class verVentas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,21 +31,7 @@ public class verTodosUsuarios extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("privilege").equals("Admin")){
-            BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios(0);
-            String respuesta = buscarTodos.getUsuarios();
-            if(respuesta.equals("1")){
-               request.setAttribute("ListaUsuarios",buscarTodos.getBenUsuarios());
-               request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
-               request.getRequestDispatcher("WEB-INF/usuarios/verTodos.jsp").forward(request, response);
-            }else{
-                request.setAttribute("error",respuesta);
-                request.getRequestDispatcher("ErrorLogin").forward(request, response);
-            }
-        }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");            
-            request.getRequestDispatcher("ErrorLogin").forward(request, response);
-        }
+        request.getRequestDispatcher("WEB-INF/ventas/verVentas.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
