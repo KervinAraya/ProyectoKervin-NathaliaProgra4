@@ -41,9 +41,9 @@
                                     </li>
                                     <li role="presentation" class="">
                                         <a href="vender" >
-                                            <img class="img-circle" src="imagenes/sell.png" />
+                                            <img class="img-circle" src="imagenes/milk.jpg" />
                                             <span class="quote"><i class="fa fa-quote-left"></i></span>
-                                            <h4>Vender</h4>
+                                            <h4>Agregar Leche</h4>
                                             <br>
                                         </a>
                                     </li>

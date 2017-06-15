@@ -69,10 +69,10 @@
                                         
                                 </ul>
                             </li>
-                            <li class=" <%if(request.getAttribute("active").equals("ventas"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ventas <span class="caret"></span></a>
+                            <li class=" <%if(request.getAttribute("active").equals("leche"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Leche <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                        <li><a href="verVentas">Ver ventas</a></li>
-                                        <li><a href="vender">General venta</a></li>
+                                    <li><a href="verVentas">Agregar Leche</a></li>
+                                        <li><a href="vender">Ver leche</a></li>
                                 </ul>
                             </li>                               
                         </ul>
