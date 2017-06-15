@@ -35,6 +35,7 @@ public class InsertarUsuarios {
            bandera = "Error al insertar el usuario";
                    
         }
+        conexion.cerrar();
         return bandera;
     }
 }

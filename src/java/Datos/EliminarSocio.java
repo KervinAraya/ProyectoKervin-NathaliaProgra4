@@ -35,7 +35,7 @@ public class EliminarSocio {
                 bandera="Error "+e.getMessage();
             }
         }
-
+        conexion.cerrar();
         return bandera;
     }
 }

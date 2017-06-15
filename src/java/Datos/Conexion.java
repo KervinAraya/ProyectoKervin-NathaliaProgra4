@@ -15,23 +15,19 @@ import java.sql.SQLException;
  */
 public class Conexion {
    private static Connection conexion = null;
-   public static Connection obtener() throws SQLException, ClassNotFoundException {
-      if (conexion == null) {
-        
+   public static Connection obtener() throws SQLException, ClassNotFoundException {        
         Class.forName("com.mysql.jdbc.Driver");
         conexion = (Connection) DriverManager.getConnection("jdbc:mysql://192.168.1.7/bdProgra", "progra", "");
-        
-      }
       return conexion;
    }
    public static void cerrar(){
-      if (conexion != null) {
-          try{
-             conexion.close();
-             conexion=null;
-          }catch(Exception e){}
+     
+        try{
+           conexion.close();
+           conexion=null;
+        }catch(Exception e){}
          
-      }
    }
+   
     
 }

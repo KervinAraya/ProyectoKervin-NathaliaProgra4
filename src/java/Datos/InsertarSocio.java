@@ -35,6 +35,7 @@ public class InsertarSocio {
            bandera = "Error: ("+ e.getMessage() +") al insertar el socio";
                    
         }
+        conexion.cerrar();
         return bandera;
     }
 }

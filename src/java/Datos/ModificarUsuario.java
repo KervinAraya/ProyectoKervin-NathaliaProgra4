@@ -37,7 +37,7 @@ public class ModificarUsuario {
                 bandera="Error "+e.getMessage();
             }
         }
-
+        conexion.cerrar();
         return bandera;
     }
     
