@@ -5,10 +5,9 @@
  */
 package view;
 
-import Bean.BeanLeche;
+import Datos.BuscarLeche;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author prueba
  */
-@WebServlet(name = "ListarLeche", urlPatterns = {"/ListarLeche"})
-public class ListarLeche extends HttpServlet {
+@WebServlet(name = "verLeche", urlPatterns = {"/verLeche"})
+public class verLeche extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,23 +31,16 @@ public class ListarLeche extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-     throws ServletException, IOException {
-        try (PrintWriter out = response.getWriter()) {
-            ArrayList<BeanLeche> listaLeche = (ArrayList<BeanLeche>) request.getAttribute("ListaLeche");
-            if(listaLeche!=null){
-                for(BeanLeche b: listaLeche){
-                      out.println("<tr>");
-                      out.println("<td>");
-                      out.println(b.getNombre()+" "+b.getApellido1()+" "+b.getApellido2());
-                      out.println("</td>");
-                      out.println("<td>");
-                      out.println(b.getCantidadLeche());
-                      out.println("</td>");
-                      out.println("</tr>");
-
-                }
-            }
-		    
+            throws ServletException, IOException {
+       BuscarLeche buscarTodos = new BuscarLeche(0);
+        String respuesta = buscarTodos.getLeche();
+        if(respuesta.equals("1")){
+           request.setAttribute("ListaLeche",buscarTodos.getBeanLeche());
+           request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
+           request.getRequestDispatcher("WEB-INF/leche/seleccionar.jsp").forward(request, response);
+        }else{
+            request.setAttribute("error",respuesta);
+            request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
     }
 

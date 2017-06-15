@@ -50,11 +50,7 @@
 		                   
 		                   <thead>
 		                   
-		                   
-		                   <th>Cedula</th>
-		                    <th>Nombre</th>
-                                    <th>Primer Apellido</th>
-                                    <th>Segundo Apellido</th>
+		                    <th>Nombre Completo</th>
 		                     <th>Cantidad Ingresada</th>
 		                    
 		                      
@@ -66,13 +62,7 @@
                                 for(BeanLeche b: listaLeche){
                                     out.println("<tr>");
                                     out.println("<td>");
-                                    out.println(b.getNombre());
-                                    out.println("</td>");
-                                    out.println("<td>");
-                                    out.println(b.getApellido1());
-                                    out.println("</td>");
-                                    out.println("<td>");
-                                    out.println(b.getApellido2());
+                                    out.println(b.getNombre()+" "+b.getApellido1()+" "+b.getApellido2());
                                     out.println("</td>");
                                     out.println("<td>");
                                     out.println(b.getCantidadLeche());

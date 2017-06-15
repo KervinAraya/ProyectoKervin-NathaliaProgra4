@@ -35,13 +35,13 @@ public class BuscarLeche {
             try{   
                int contador=0;
                int contadorParar=0;
-               ResultSet re = statement.executeQuery("SELECT ced_socio,nombre_socio,apellido1_socio,apellido2_socio, litros FROM Leche innerjoin Socios on (Socios.ced_socio=Leche.ced_socio)");
+               ResultSet re = statement.executeQuery("SELECT Socios.ced_socio,nombre_socio,apellido1_socio,apellido2_socio, litros FROM Leche inner join Socios on (Socios.ced_socio=Leche.ced_socio)");
                bandera="1";
                while(re.next()){
                    if(contador==paginas && contadorParar<=5){
                         bandera="1";
                         BeanLeche beanLeche = new BeanLeche();
-                        beanLeche.setCedula(re.getString("codigo_producto"));
+                        beanLeche.setCedula(re.getString("ced_socio"));
                         beanLeche.setNombre(re.getString("nombre_socio"));
                         beanLeche.setApellido1(re.getString("apellido1_socio"));
                         beanLeche.setApellido2(re.getString("apellido2_socio"));

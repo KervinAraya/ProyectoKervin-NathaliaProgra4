@@ -72,7 +72,7 @@
                             <li class=" <%if(request.getAttribute("active").equals("leche"))out.println("active"); %>"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Leche <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="registrarLeche">Agregar Leche</a></li>
-                                        <li><a href="vender">Ver leche</a></li>
+                                        <li><a href="verLeche">Ver leche</a></li>
                                 </ul>
                             </li>                               
                         </ul>
