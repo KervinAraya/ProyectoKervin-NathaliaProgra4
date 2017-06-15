@@ -27,7 +27,7 @@
             <h1 class="well">REGISTRAR PRODUCTOS</h1>
             <div class="col-lg-12well">
                 <div class="row">
-                    <form>
+                    <form action="ServletRegistrarProducto" method="POST">
                          
                         <div class="col-sm-12">
                              <div class="form-group">
@@ -37,7 +37,7 @@
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label>Tipo de Producto lácteo</label>
-                                    <input type="text" name="producto" placeholder="Ingrese el producto" class="form-control" >
+                                    <input type="text" name="nombre" placeholder="Ingrese el producto" class="form-control" >
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label>Precio:</label>

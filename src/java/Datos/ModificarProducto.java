@@ -22,7 +22,7 @@ public class ModificarProducto {
         this.beanProducto =  beanProducto;
         this.codigoBuscar = this.beanProducto.getCodigo();
     }
-    public String updateUsuario(){
+    public String modificarProducto(){
         String bandera="";
         Statement statement = null;
         try{

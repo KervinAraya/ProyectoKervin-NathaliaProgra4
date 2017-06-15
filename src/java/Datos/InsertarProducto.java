@@ -27,7 +27,7 @@ public class InsertarProducto {
             statement = conexion.obtener().createStatement();
          }catch(Exception e){bandera="Error al conectar con la base de datos";}
         try{
-            int cont = statement.executeUpdate("INSERT INTO Productos(codigo_Productos,nombre_Productos,precio) VALUES('"+beanProductos.getCodigo()+"','"+beanProductos.getNombre()+"','"+beanProductos.getPrecio()+"')");
+            int cont = statement.executeUpdate("INSERT INTO Productos(codigo_producto,nombre_producto,precio,cantidad_productos,usuario) VALUES('"+beanProductos.getCodigo()+"','"+beanProductos.getNombre()+"',"+Double.parseDouble(beanProductos.getPrecio())+","+Integer.parseInt(beanProductos.getCantidad())+",'"+beanProductos.getUsuario()+"')");
             if(cont>0){
                 bandera="1";
             }
