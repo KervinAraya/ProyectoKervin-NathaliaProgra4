@@ -5,9 +5,10 @@
  */
 package view;
 
-import Datos.BuscarTodosProductos;
+import Bean.BeanProductos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author kervin
+ * @author prueba
  */
-@WebServlet(name = "verProductos", urlPatterns = {"/verProductos"})
-public class verProductos extends HttpServlet {
+@WebServlet(name = "ListaProductos", urlPatterns = {"/ListaProductos"})
+public class ListaProductos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,20 +33,30 @@ public class verProductos extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          
-        BuscarTodosProductos buscarTodos = new BuscarTodosProductos(0);
-        String respuesta = buscarTodos.getProductos();
-        if(respuesta.equals("1")){
-           request.setAttribute("ListaProductos",buscarTodos.getBeanProductos());
-           request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
-           request.getRequestDispatcher("WEB-INF/productos/verProductos.jsp").forward(request, response);
-        }else{
-            request.setAttribute("error",respuesta);
-            request.getRequestDispatcher("ErrorLogin").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            ArrayList<BeanProductos> listaProductos = (ArrayList<BeanProductos>) request.getAttribute("ListaProductos");
+            if(listaProductos!=null){
+                for(BeanProductos b: listaProductos){
+                    out.println("<tr>");
+                    out.println("<td>");
+                    out.println(b.getCodigo());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(b.getNombre());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(b.getPrecio());
+                    out.println("</td>");
+                    out.println("<td>");
+                    out.println(b.getCantidad());
+                    out.println("</td>");
+                    out.println("</tr>");
+                }
+            }
         }
-       
     }
-    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -85,5 +96,5 @@ public class verProductos extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
+

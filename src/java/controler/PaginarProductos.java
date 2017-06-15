@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controler;
 
 import Datos.BuscarTodosProductos;
 import java.io.IOException;
@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author kervin
+ * @author prueba
  */
-@WebServlet(name = "verProductos", urlPatterns = {"/verProductos"})
-public class verProductos extends HttpServlet {
+@WebServlet(name = "PaginarProductos", urlPatterns = {"/PaginarProductos"})
+public class PaginarProductos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,20 +32,17 @@ public class verProductos extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          
-        BuscarTodosProductos buscarTodos = new BuscarTodosProductos(0);
+        BuscarTodosProductos buscarTodos = new BuscarTodosProductos(Integer.parseInt(request.getParameter("pagina"))*5);
         String respuesta = buscarTodos.getProductos();
         if(respuesta.equals("1")){
            request.setAttribute("ListaProductos",buscarTodos.getBeanProductos());
-           request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
-           request.getRequestDispatcher("WEB-INF/productos/verProductos.jsp").forward(request, response);
+           request.getRequestDispatcher("ListaProductos").forward(request, response);
         }else{
             request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
-       
     }
-    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
