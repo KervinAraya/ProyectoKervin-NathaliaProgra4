@@ -19,7 +19,7 @@
          <script>
             function buscarPagina(pagina){
                 $(document).ready(function(){
-                    $.post('PaginarProductos',{
+                    $.post('PaginarLeche',{
                         pagina : pagina
                     }, function(responseText){
                             $('#filas').html(responseText);

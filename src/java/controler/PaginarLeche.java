@@ -36,7 +36,7 @@ public class PaginarLeche extends HttpServlet {
         String respuesta = buscarTodos.getLeche();
         if(respuesta.equals("1")){
            request.setAttribute("ListaLeche",buscarTodos.getBeanLeche());
-           request.getRequestDispatcher("ListaLeche").forward(request, response);
+           request.getRequestDispatcher("ListarLeche").forward(request, response);
         }else{
             request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);

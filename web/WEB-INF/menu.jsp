@@ -46,7 +46,7 @@
                             }
                             if(sesion.getAttribute("privilege").equals("Admin")){
                                 out.println("<li class=");
-                                if(request.getAttribute("active").equals("Usuarios"))out.println("active");
+                                if(request.getAttribute("active").equals("usuarios"))out.println("active");
                                 out.println(">");
                                 out.println("<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Usuarios <span class='caret'></span></a>");
                                 out.println("<ul class='dropdown-menu'>");  
