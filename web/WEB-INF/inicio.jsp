@@ -30,16 +30,9 @@
                                 <!-- Nav tabs -->
                                 <ul class="[ nav nav-justified ]" id="nav-tabs" role="tablist">
                                 <h2>Accesos rápidos</h2>
-                                     <li role="presentation" class="">
-                                        <a href="materiaprima/registro.html" >
-                                            <img class="img-circle" src="imagenes/milk.ico" />
-                                            <span class="quote"><i class="fa fa-quote-left"></i></span>
-                                            <h4>Registro leche</h4>
-                                            <br>
-                                        </a>
-                                    </li>
+                                    
                                     <li role="presentation" class="">
-                                        <a href="productos/sinnombre.html" >
+                                        <a href="registrarProducto" >
                                             <img class="img-circle" src="imagenes/cheese.ico" />
                                             <span class="quote"><i class="fa fa-quote-left"></i></span>
                                             <h4>Agregar productos procesados</h4>
@@ -47,7 +40,7 @@
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
-                                        <a href="ventas/añadir.html" >
+                                        <a href="vender" >
                                             <img class="img-circle" src="imagenes/sell.png" />
                                             <span class="quote"><i class="fa fa-quote-left"></i></span>
                                             <h4>Vender</h4>
@@ -55,7 +48,7 @@
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
-                                        <a href="productos/seleccionar.html" >
+                                        <a href="verProductos" >
                                             <img class="img-circle" src="imagenes/inve.png" />
                                             <span class="quote"><i class="fa fa-quote-left"></i></span>
                                             <h4>Ver productos</h4>
