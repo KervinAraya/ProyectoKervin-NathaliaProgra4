@@ -4,6 +4,8 @@
     Author     : prueba
 --%>
 
+<%@page import="Bean.BeanLeche"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +16,20 @@
         <jsp:include page="../menu.jsp" />
 	<script src="js/tablas/script.js" ></script>
         <link rel='stylesheet' href='css/formularios/registro.css'>
+         <script>
+            function buscarPagina(pagina){
+                $(document).ready(function(){
+                    $.post('PaginarProductos',{
+                        pagina : pagina
+                    }, function(responseText){
+                            $('#filas').html(responseText);
+                    
+                    });
+                });
+                
+                
+            }
+        </script> 
  
  	<main>
  		<div class="container">
@@ -36,15 +52,17 @@
 		                   
 		                   
 		                   <th>Cedula</th>
-		                    <th>Nombre Completo</th>
-		                     <th>Cantidad</th>
+		                    <th>Nombre</th>
+                                    <th>Primer Apellido</th>
+                                    <th>Segundo Apellido</th>
+		                     <th>Cantidad Ingresada</th>
 		                    
 		                      
 		                   </thead>
 		   <tbody id="filas">
                         <%
                             ArrayList<BeanLeche> listaLeche = (ArrayList<BeanLeche>) request.getAttribute("ListaLeche");
-                            if(listaProductos!=null){
+                            if(listaLeche!=null){
                                 for(BeanLeche b: listaLeche){
                                     out.println("<tr>");
                                     out.println("<td>");
