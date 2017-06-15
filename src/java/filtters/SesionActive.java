@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author kervin
  */
-@WebFilter(filterName = "SesionActive", urlPatterns = {"/registrarUsuario", "/principal","/eliminarSocio","/eliminarUsuario","/modificarSocio","/modificarUsuario","/registrarSocio","/seleccionarSocio","/seleccionarUsuario","/seleccionarver","/seleccionarverSocios","/verTodosSocios","/verTodosUsuarios","/registrarProducto","/modificarProductos","/verTodosSocios","/eliminarProducto","/verProductos"})
+@WebFilter(filterName = "SesionActive", urlPatterns = {"/registrarUsuario", "/principal","/eliminarSocio","/eliminarUsuario","/modificarSocio","/modificarUsuario","/registrarSocio","/seleccionarSocio","/seleccionarUsuario","/seleccionarver","/seleccionarverSocios","/verTodosSocios","/verTodosUsuarios","/registrarProducto","/modificarProductos","/verTodosSocios","/eliminarProducto","/verProductos","/registrarLeche"})
 public class SesionActive implements Filter {
     
     private static final boolean debug = true;

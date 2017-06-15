@@ -40,7 +40,7 @@
                                         </a>
                                     </li>
                                     <li role="presentation" class="">
-                                        <a href="vender" >
+                                        <a href="registrarLeche" >
                                             <img class="img-circle" src="imagenes/milk.jpg" />
                                             <span class="quote"><i class="fa fa-quote-left"></i></span>
                                             <h4>Agregar Leche</h4>
