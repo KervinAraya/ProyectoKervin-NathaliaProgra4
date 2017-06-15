@@ -48,36 +48,44 @@
         }
 
     </script>
+    <script type="text/javascript">
+        function numeros(e){
+             var key = window.Event ? e.which : e.keyCode
+            return (key >= 48 && key <= 57)
+            
+
+        }
+    </script>
    <main>
         <div class="container-formulario">
             <h1 class="well">REGISTRAR LECHE</h1>
             <div class="col-lg-12well">
                 <div class="row">
                     
-                         
+                         <jsp:useBean id="beanSocio" class="Bean.BeanSocio" scope="request"/>
                         <div class="col-sm-12">
-                            <form action="" method="POST">
+                            <form action="ServletBuscarSocioLeche" method="POST">
                              <div class="form-group">
                                 <label>Cedula</label>
-                                <input type="text" id="cedula" name="cedula" onKeyPress="return maskara(event);" placeholder="Ingrese el nombre" class="form-control" required>
+                                <input type="text" id="cedula" name="cedulaBuscar" onKeyPress="return maskara(event);" placeholder="Ingrese el nombre" class="form-control" required>
                             </div> 
-                                <input type="subtmit" value="Buscar" class="btnRegistro"> 
+                                <input type="submit" value="Buscar" class="btnRegistro"> 
                            </form>
                             <div class="row">
-                                <form action="" method="POST">
+                                <form action="ServletRegistrarLeche" method="POST">
                                 <div class="col-sm-6 form-group">
                                     <label>Cedula</label>
-                                    <input type="text" name="cedula" class="form-control" readonly="readonly"  required >
+                                    <input type="text" name="cedula" value="<jsp:getProperty name="beanSocio" property="cedula"/> " class="form-control" readonly="readonly"  required >
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label>Nombre</label>
-                                    <input type="text" placeholder="" name="nombre" class="form-control" readonly="readonly" required >
+                                    <input type="text" placeholder="" name="nombre"value="<jsp:getProperty name="beanSocio" property="nombre"/> <jsp:getProperty name="beanSocio" property="apellido1"/> <jsp:getProperty name="beanSocio" property="apellido2"/>" class="form-control" readonly="readonly" required >
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label>Cantidad:</label>
-                                    <input type="text" name="cantidad" placeholder="Ingrese la cantidad" class="form-control" required>
+                                    <input type="text" name="cantidad" onKeyPress="return numeros(event);" placeholder="Ingrese la cantidad" class="form-control" required>
                                 </div>
-                                <input type="subtmit" value="Registrar" class="btnRegistro">
+                                <input type="submit" value="Registrar" class="btnRegistro">
                                 </form>
                             </div>                  
                              
