@@ -1,3 +1,5 @@
+package Datos;
+
 /**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -20,7 +22,7 @@ public class EliminarProducto{
       
     }
     
-    public String borrarProducto(){
+    public String eliminarProducto(){
         String bandera="";
         Statement statement = null;
         try{
@@ -28,7 +30,7 @@ public class EliminarProducto{
         }catch(Exception e){bandera="Error al conectar con la base de datos";}           
         if(bandera.equals("")){
             try{   
-               bandera = String.valueOf(statement.executeUpdate("DELETE FROM Productos WHERE codigo_productos='"+codigoBuscar+"'"));
+               bandera = String.valueOf(statement.executeUpdate("DELETE FROM Productos WHERE codigo_producto='"+codigoBuscar+"'"));
         
             }catch(Exception e){
                 bandera="Error "+e.getMessage();

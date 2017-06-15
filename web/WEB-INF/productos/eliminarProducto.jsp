@@ -22,16 +22,19 @@
         <div class="col ">
          
           <div class="row">
+            <form action="ServletBuscarProductoEliminar" method="POST">
             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
               <span class="srchLabel">BUSQUEDA</span>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-              <input placeholder="Buscar producto ..." type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false" id="txtSearch">
+              <input placeholder="Buscar producto ..." type="text" class="typeahead tt-query" name="codigoBuscar" autocomplete="off" spellcheck="false" id="codigoBuscar">
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <button type="button" onclick="buscarEliminar();" class="btn btn-primary btnSearchOptions">BUSCAR</button>
+              <input type="submit" value="BUSCAR" class="btn btn-primary btnSearchOptions">
             </div>
+                </form>
           </div>
+        
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-10 col-lg-12 col-xl-12">
               <span class="engAlpha">
@@ -60,23 +63,27 @@
                        
                        <thead>
                        
-                       
                          <th>Codigo</th>
                          <th>Producto Lácteo</th>
                          <th>Cantidad</th>
                          <th>Precio</th>
                         
-                         
-                          
                      </thead>
                     <tbody id="filas">
-                      
+                       <jsp:useBean id="beanProducto" class="Bean.BeanProductos" scope="request"/> 
+                         <tr>
+                        <td><jsp:getProperty name="beanProducto" property="codigo"/></td>    
+                        <td><jsp:getProperty name="beanProducto" property="nombre"/></td>   
+                        <td><jsp:getProperty name="beanProducto" property="precio"/></td>   
+                        <td><jsp:getProperty name="beanProducto" property="cantidad"/></td>   
+                         </tr>
                     </tbody>
                 </table>
                 </div>
                </div>
-
-               <button type="subtmit" class="btnRegistro">Eliminar</button>  
+                <form action="ServletEliminarProducto" method="POST">
+                    <input type="submit" value="Eliminar" class="btnRegistro">  
+                </form> 
             </div>
  
             </div>

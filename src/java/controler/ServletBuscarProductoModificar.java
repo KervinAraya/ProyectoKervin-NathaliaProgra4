@@ -5,6 +5,7 @@
  */
 package controler;
 
+import Datos.BuscarProducto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,7 +32,16 @@ public class ServletBuscarProductoModificar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
+            String codigoProducto = request.getParameter("codigoProducto");
+            BuscarProducto buscarProducto = new BuscarProducto(codigoProducto);
+            String respuesta = buscarProducto.getProducto();
+            if(respuesta.equals("1")){
+                request.setAttribute("beanProducto", buscarProducto.getBeanProducto());
+                request.getRequestDispatcher("WEB-INF/productos/modificar.jsp").forward(request, response);
+            }else{
+                request.setAttribute("error",respuesta);
+                request.getRequestDispatcher("ErrorLogin").forward(request, response);
+            }
       
              }
 

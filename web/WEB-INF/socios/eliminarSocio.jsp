@@ -106,11 +106,11 @@
                      <tbody id="filas">
                          <jsp:useBean id="beanSocio" class="Bean.BeanSocio" scope="request"/> 
                          <tr>
-                             <td><jsp:getProperty name="beanSocio" property="cedula"/></td>    
-                             <td><jsp:getProperty name="beanSocio" property="nombre"/> <jsp:getProperty name="beanSocio" property="apellido1"/> <jsp:getProperty name="beanSocio" property="apellido2"/></td>   
-                             <td><jsp:getProperty name="beanSocio" property="correo"/></td>   
-                             <td><jsp:getProperty name="beanSocio" property="direccion"/></td>   
-                             <td><jsp:getProperty name="beanSocio" property="telefono"/></td>   
+                        <td><jsp:getProperty name="beanSocio" property="cedula"/></td>    
+                        <td><jsp:getProperty name="beanSocio" property="nombre"/> <jsp:getProperty name="beanSocio" property="apellido1"/> <jsp:getProperty name="beanSocio" property="apellido2"/></td>   
+                        <td><jsp:getProperty name="beanSocio" property="correo"/></td>   
+                        <td><jsp:getProperty name="beanSocio" property="direccion"/></td>   
+                        <td><jsp:getProperty name="beanSocio" property="telefono"/></td>   
                          </tr>
                          
                      </tbody>

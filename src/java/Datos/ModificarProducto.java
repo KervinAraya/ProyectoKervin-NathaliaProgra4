@@ -30,7 +30,7 @@ public class ModificarProducto {
         }catch(Exception e){bandera="Error al conectar con la base de datos";}           
         if(bandera.equals("")){
             try{   
-               bandera = String.valueOf(statement.executeUpdate("UPDATE Productos SET codigo_producto='"+beanProducto.getCodigo()+"',nombre_producto='"+beanProducto.getNombre()+"',precio='"+beanProducto.getPrecio()+"',cantidad_productos='"+beanProducto.getCantidad()+"',usuario='"+beanProducto.getUsuario()+"' WHERE codigo_producto='"+codigoBuscar+"'"));
+               bandera = String.valueOf(statement.executeUpdate("UPDATE Productos SET codigo_producto='"+beanProducto.getCodigo()+"',nombre_producto='"+beanProducto.getNombre()+"',precio='"+beanProducto.getPrecio()+"',cantidad_productos='"+beanProducto.getCantidad()+"' WHERE codigo_producto='"+codigoBuscar+"'"));
         
             }catch(Exception e){
                 bandera="Error "+e.getMessage();

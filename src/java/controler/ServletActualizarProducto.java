@@ -38,7 +38,7 @@ public class ServletActualizarProducto extends HttpServlet {
                 ModificarProducto modiProdu = new ModificarProducto(beanProducto);
                 String respuesta = modiProdu.modificarProducto();
                 if(respuesta.equals("1")){
-                    request.getRequestDispatcher("modificarSocio").forward(request, response);
+                    request.getRequestDispatcher("modificarProducto").forward(request, response);
                 }else{
                     request.setAttribute("error",respuesta);
                     request.getRequestDispatcher("ErrorLogin").forward(request, response);
