@@ -36,6 +36,7 @@ public class BuscarTodosProductos {
                int contador=0;
                int contadorParar=0;
                ResultSet re = statement.executeQuery("SELECT * FROM Productos");
+               bandera="1";
                while(re.next()){
                    if(contador==paginas && contadorParar<=5){
                         bandera="1";
