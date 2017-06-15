@@ -47,7 +47,7 @@ public class BuscarSocio {
                }
             }catch(Exception e){bandera="Error "+e.getMessage();}
         }
-
+        conexion.cerrar();
         return bandera;
     }
     

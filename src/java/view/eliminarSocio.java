@@ -31,13 +31,9 @@ public class eliminarSocio extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("privilege").equals("Admin")){
-            request.getRequestDispatcher("WEB-INF/socios/eliminarSocio.jsp").forward(request, response);
-        }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");
-            
-            request.getRequestDispatcher("ErrorLogin").forward(request, response);
-        }  
+        
+        request.getRequestDispatcher("WEB-INF/socios/eliminarSocio.jsp").forward(request, response);
+         
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

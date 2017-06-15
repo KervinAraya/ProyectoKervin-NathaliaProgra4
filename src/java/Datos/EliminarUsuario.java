@@ -37,7 +37,7 @@ public class EliminarUsuario {
                 bandera="Error "+e.getMessage();
             }
         }
-
+        conexion.cerrar();
         return bandera;
     }
 }

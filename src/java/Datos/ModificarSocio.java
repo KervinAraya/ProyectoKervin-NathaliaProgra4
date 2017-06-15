@@ -37,7 +37,7 @@ public class ModificarSocio {
                 bandera="Error "+e.getMessage();
             }
         }
-
+        conexion.cerrar();
         return bandera;
     }
 }

@@ -32,21 +32,18 @@ public class verTodosUsuarios extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("privilege").equals("Admin")){
-            BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios(0);
-            String respuesta = buscarTodos.getUsuarios();
-            if(respuesta.equals("1")){
-               request.setAttribute("ListaUsuarios",buscarTodos.getBenUsuarios());
-               request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
-               request.getRequestDispatcher("WEB-INF/usuarios/verTodos.jsp").forward(request, response);
-            }else{
-                request.setAttribute("error",respuesta);
-                request.getRequestDispatcher("ErrorLogin").forward(request, response);
-            }
+       
+        BuscarTodosUsuarios buscarTodos = new BuscarTodosUsuarios(0);
+        String respuesta = buscarTodos.getUsuarios();
+        if(respuesta.equals("1")){
+           request.setAttribute("ListaUsuarios",buscarTodos.getBenUsuarios());
+           request.setAttribute("Cantidad",buscarTodos.getCantidadDatos());
+           request.getRequestDispatcher("WEB-INF/usuarios/verTodos.jsp").forward(request, response);
         }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");            
+            request.setAttribute("error",respuesta);
             request.getRequestDispatcher("ErrorLogin").forward(request, response);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

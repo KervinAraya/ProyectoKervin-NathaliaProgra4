@@ -39,6 +39,7 @@ public class InicioSession {
                }
             }catch(Exception e){bandera="Datos incorrectos";}
         }
+        conexion.cerrar();
         return bandera;
     }
     public String getUsuario(){

@@ -31,13 +31,9 @@ public class seleccionarver extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if(request.getSession().getAttribute("privilege").equals("Admin")){
-            request.getRequestDispatcher("WEB-INF/usuarios/seleccionarver.jsp").forward(request, response);
-        }else{
-            request.setAttribute("error", "No tiene privilegios para acceder");
-            
-            request.getRequestDispatcher("ErrorLogin").forward(request, response);
-        }  
+        
+        request.getRequestDispatcher("WEB-INF/usuarios/seleccionarver.jsp").forward(request, response);
+        
         
     }
 

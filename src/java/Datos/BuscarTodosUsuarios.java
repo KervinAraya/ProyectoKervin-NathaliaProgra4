@@ -69,7 +69,7 @@ public class BuscarTodosUsuarios {
             cantidadDatos = resultSet.getInt(1); 
         }catch(Exception e){bandera="Error "+e.getMessage();}
         }
-
+        conexion.cerrar();
         return bandera;
     }
     public int getCantidadDatos(){
